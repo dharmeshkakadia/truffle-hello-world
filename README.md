@@ -7,20 +7,20 @@ A simple example of using [truffle](https://truffleframework.com/) framework for
     ```
     truffle init
     ```
-2. Create a contract called HelloWorld. You can ad
+2. Create a contract called HelloWorld and add relevant contract code in `contracts/HelloWorld.sol`.
     ```
     truffle create contract HelloWorld
     ```
-3. Create a migration that will deploy `HelloWorld` contract. 
+3. Create a deployment (aka migration) that will deploy `HelloWorld` contract and add relevant code in generated deploy file under `migrations` folder.
     ```
-    truffle create migration deploy_hello_world
+    truffle create deploy deploy_hello_world
     ```
-4. Test it using `truffle develop` and type `migrate --reset`. The output would look something like:
+4. Test it using `truffle develop` and type `deploy --reset`. The output would look something like:
     
     ```
     Connected to existing Truffle Develop session at http://127.0.0.1:9545/
 
-    truffle(develop)> migrate --reset
+    truffle(develop)> deploy --reset
     Using network 'develop'.
 
     Running migration: 1_initial_migration.js
@@ -39,3 +39,10 @@ A simple example of using [truffle](https://truffleframework.com/) framework for
     Saving artifacts...
     truffle(develop)>
     ```
+5. You can exit truffle session with `.exit` or `ctrl-D`. You can also confirm deployed contracts by running `truffle network`. 
+    ```
+    Network: UNKNOWN (id: 4447)
+    HelloWorld: 0x2eca6fcfef74e2c8d03fbaf0ff6712314c9bd58b
+    Migrations: 0x2a504b5e7ec284aca5b6f49716611237239f0b97
+    ```
+
